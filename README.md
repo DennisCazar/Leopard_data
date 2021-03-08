@@ -1,25 +1,23 @@
 # Leopard_data
 Data from LAGO WCD detector
-Data fdormat as follows
+Data format as follows
+Each column correspond to 1 input channel (Only 2 channels are used)
+Baseline to each channel set to 50
+1st Channel (CH0) is PMT amplified output
+2nd Channel (CH1) is last dynode output
+Each pulse is acquired in 12 bins at 40MHz rate (25ns time resolution)
 
-# v 5
-# #
-# # This is a LAGO raw data file, version 5
-# # It contains the following data:
-# #   <N1> <N2> <N3>   : line with values of the 3 ADC for a triggered pulse
-# #   # t <C> <V>      : end of a trigger
-# #                      gives the channel trigger (<C>: 3 bit mask) and 40MHZ clock count (<V>) of the trigger time
-# #   # c <C>          : internal trigger counter
-# #   # x f <V>        : 40 MHz frequency
-# #   # x r C1-DD <V>  : raw temperature and pressure sensor value
-# #   # x r D1 <V>     : raw temperature/pressure value
-# #   # x r D2 <V>     : raw temperature/pressure value
-# #   # x h <HH:MM:SS> <DD/MM/YYYY> <S> : GPS time (every new second, last number is seconds since EPOCH)
-# #   # x s <T> C <P> hPa <A> m : temperature <T>, pressure <P> and altitude (from pressure) <A>
-# #   # x g <LAT> <LON> <ALT>   : GPS data - latitude, longitude, altitude
-# #   # x b <B1> <B2> <B3>      : baselines (NOT IMPLEMENTED IN LAGO)
-# # In case of error, an unfinished line will be finished by # E @@@
-# # Followed by a line with # E <N> and the error message in human readable format, where <N> is the error code:
-# #   # E 1 : read timeout of 2 seconds
-# #   # E 2 : too many buffer reading tries
-# #   # E 3 : unknown word from FPGA
+ t 1 50083  // Trigger info channel number  time stamp
+ c 3012     //  Pulse counter
+51 49 49    //  CH0 CH1  CH2 output
+51 50 49
+68 53 51
+61 48 50
+51 49 49
+51 51 50
+53 48 49
+57 48 50
+53 50 49
+51 48 50
+50 49 48
+50 50 49
